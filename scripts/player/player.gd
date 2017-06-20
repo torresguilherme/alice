@@ -34,12 +34,20 @@ func _process(delta):
 	down = 0
 	
 	if Input.is_action_pressed("walk_right"):
+		dir_y = 0
+		dir_x = 1
 		right = 1
 	if Input.is_action_pressed("walk_left"):
+		dir_y = 0
+		dir_x = -1
 		left = -1
 	if Input.is_action_pressed("walk_up"):
+		dir_y = -1
+		dir_x = 0
 		up = -1
 	if Input.is_action_pressed("walk_down"):
+		dir_y = 1
+		dir_x = 0
 		down = 1
 	
 	set_pos(get_pos() + Vector2(1, 0) * speed * delta * (right + left))
