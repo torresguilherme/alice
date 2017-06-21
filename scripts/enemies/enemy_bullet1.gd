@@ -21,9 +21,6 @@ func _process(delta):
 
 func _on_enemy_bullet1_area_enter( area ):
 	if area.is_in_group(global.PLAYER_GROUP):
-		if area.has_method("TakeDamage"):
-			area.TakeDamage(damage)
-		else:
-			area.queue_free()
+		area.TakeDamage(damage)
 		queue_free()
 	pass

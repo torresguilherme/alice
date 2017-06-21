@@ -95,3 +95,13 @@ func Shoot(shot):
 func TakeDamage(value):
 	print("ouch!")
 	hp -= value
+	pass
+
+func _on_player_area_enter( area ):
+	if area.is_in_group(global.ENEMY_GROUP):
+		if area.has_method("TakeDamage"):
+			area.TakeDamage(5)
+		else:
+			area.queue_free()
+		TakeDamage(1)
+	pass

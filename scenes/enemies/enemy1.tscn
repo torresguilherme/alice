@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://scripts/enemies/enemy1.gd" type="Script" id=1]
 [ext_resource path="res://sprites/enemies/enemy1-1.png" type="Texture" id=2]
@@ -6,17 +6,12 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 8.97577, 20.0793, 40.7415, 17.6357, 4.90323, 42.0709, -22.79, 27.4098 )
+points = Vector2Array( 8.16071, 3.7892, 9.7897, 18.4503, -24.4195, 26.5953, -38.2661, -18.2024, -16.2744, -38.565 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 4.90323, 3.78912, 8.97577, 20.0793, -22.79, 27.4098, -39.0801, -17.388, -17.0884, -39.3797 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 4.90323, 3.78912, -17.0884, -39.3797, 13.0483, -36.1217, 21.1934, -8.42847 )
+points = Vector2Array( 8.16071, 3.7892, -16.2744, -38.565, 13.8622, -35.307, 22.0073, -7.61386 )
 
 [node name="enemy1" type="Area2D"]
 
@@ -27,9 +22,6 @@ shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 3 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/2/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -43,8 +35,8 @@ texture = ExtResource( 2 )
 [node name="hitbox" type="CollisionPolygon2D" parent="."]
 
 build_mode = 0
-polygon = Vector2Array( -22.79, 27.4098, 4.90323, 42.0709, 40.7415, 17.6357, 8.97577, 20.0793, 4.90323, 3.78912, 21.1934, -8.42847, 13.0483, -36.1217, -17.0884, -39.3797, -39.0801, -17.388 )
-shape_range = Vector2( 0, 2 )
+polygon = Vector2Array( -16.2744, -38.565, -38.2661, -18.2024, -24.4195, 26.5953, 9.7897, 18.4503, 8.16071, 3.7892, 22.0073, -7.61386, 13.8622, -35.307 )
+shape_range = Vector2( 0, 1 )
 trigger = false
 
 
