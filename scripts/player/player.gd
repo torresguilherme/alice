@@ -17,8 +17,9 @@ var left = 0
 var up = 0
 var down = 0
 
-# animator
+# animators
 onready var anim = get_node("anim")
+onready var hit_anim = get_node("hit_anim")
 
 # shot types
 var pre_shot = preload("res://scenes/player/player_bullet.tscn")
@@ -117,6 +118,7 @@ func TakeDamage(value):
 		print("ouch!")
 		hp -= value
 		invulnerable += after_hit
+		hit_anim.play("hit")
 	pass
 
 func _on_player_area_enter( area ):
