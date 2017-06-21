@@ -8,8 +8,6 @@ var direction = Vector2(0, 0)
 func _ready():
 	add_to_group(global.ENEMY_BULLET_GROUP)
 	set_process(true)
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
 
 func _process(delta):
