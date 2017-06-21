@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 #stats
 var max_hp = 4
@@ -19,6 +19,7 @@ var down = 0
 var pre_shot = preload("res://scenes/player/player_bullet.tscn")
 
 func _ready():
+	add_to_group(global.PLAYER_GROUP)
 	dir_y = 1
 	hp = 4
 	set_process(true)
@@ -90,3 +91,7 @@ func Shoot(shot):
 	shot.dir_x = dir_x
 	last_fired = cooldown
 	pass
+
+func TakeDamage(value):
+	print("ouch!")
+	hp -= value

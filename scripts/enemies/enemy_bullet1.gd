@@ -1,25 +1,26 @@
 extends Area2D
 
-var speed = 600
-var damage = 2
-var dir_y = 0
-var dir_x = 0
-var bullet_range = 1200
+var speed = 300
+var damage = 1
+var bullet_range = 1500
+var direction = Vector2(0, 0)
 
 func _ready():
 	set_process(true)
+	# Called every time the node is added to the scene.
+	# Initialization here
 	pass
 
 func _process(delta):
 	############ MOVEMENT
-	set_pos(get_pos() + Vector2(dir_x, dir_y) * speed * delta)
+	set_pos(get_pos() + direction * speed * delta)
 	
-	############# FREE FROM MEMORY
+	############ FREE MEMORY
 	if(get_pos().x >= bullet_range || get_pos().x <= -bullet_range || get_pos().y >= bullet_range || get_pos().y <= -bullet_range):
 		queue_free()
 
-func _on_player_bullet_area_enter( area ):
-	if area.is_in_group(global.ENEMY_GROUP):
+func _on_enemy_bullet1_area_enter( area ):
+	if area.is_in_group(global.PLAYER_GROUP):
 		if area.has_method("TakeDamage"):
 			area.TakeDamage(damage)
 		else:
