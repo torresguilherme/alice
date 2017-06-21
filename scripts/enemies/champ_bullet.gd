@@ -34,7 +34,6 @@ func _process(delta):
 	if last_shot <= 0:
 		var positions = []
 		GetPositions(positions)
-		print(positions[0])
 		Shoot(positions)
 		last_shot = cooldown
 	else:
@@ -53,6 +52,7 @@ func GetPositions(positions):
 	positions.append(get_node("firepoint6").get_global_pos())
 	positions.append(get_node("firepoint7").get_global_pos())
 	positions.append(get_node("firepoint8").get_global_pos())
+	pass
 
 func Shoot(positions):
 	var shots = []
@@ -64,8 +64,8 @@ func Shoot(positions):
 		get_owner().add_child(shots[i])
 	pass
 
-func _on_enemy_bullet1_area_enter( area ):
+func _on_champ_bullet_area_enter( area ):
 	if area.is_in_group(global.PLAYER_GROUP):
 		area.TakeDamage(damage)
-		queue_free()
+	queue_free()
 	pass

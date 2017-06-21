@@ -23,7 +23,7 @@ onready var anim = get_node("anim")
 onready var hit_anim = get_node("hit_anim")
 
 func _ready():
-	anim.play("default")
+	#anim.play("default")
 	add_to_group(global.ENEMY_GROUP)
 	set_process(true)
 	pass
@@ -40,6 +40,7 @@ func _process(delta):
 	if attacking:
 		if last_shot <= 0:
 			# calculates unit vector
+			print("eu devia estar atirando")
 			var sum = sqrt(abs(pow((player_position.x - get_global_pos().x), 2) + pow((player_position.y - get_global_pos().y), 2)))
 			shooting_direction = Vector2((player_position.x - get_global_pos().x)/sum, (player_position.y - get_global_pos().y)/sum)
 			
@@ -64,5 +65,5 @@ func Shoot(direction):
 	pass
 
 func TakeDamage(value):
-	hit_anim.play("hit")
+	#hit_anim.play("hit")
 	hp -= value
