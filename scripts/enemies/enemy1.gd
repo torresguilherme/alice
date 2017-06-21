@@ -18,7 +18,11 @@ var attacking = false
 var player_position
 var shooting_direction
 
+# animation
+onready var anim = get_node("anim")
+
 func _ready():
+	anim.play("default")
 	add_to_group(global.ENEMY_GROUP)
 	set_process(true)
 	pass
@@ -62,4 +66,8 @@ func Shoot3(direction):
 	pass
 
 func TakeDamage(value):
+	anim.play("hit")
 	hp -= value
+
+func return_anim_to_default():
+	anim.play("default")

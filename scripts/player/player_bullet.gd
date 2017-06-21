@@ -7,6 +7,7 @@ var dir_x = 0
 var bullet_range = 1200
 
 func _ready():
+	add_to_group(global.PLAYER_BULLET_GROUP)
 	set_process(true)
 	pass
 
