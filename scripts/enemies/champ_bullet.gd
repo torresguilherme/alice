@@ -12,8 +12,8 @@ var rot_dir = 1
 var rot_max = 90
 
 #shooting
-var shot_speed = 200
-var cooldown = .2
+var shot_speed = 150
+var cooldown = .1
 var last_shot = 0
 var pre_shot = preload("res://scenes/enemies/enemy_bullet1.tscn")
 

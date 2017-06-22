@@ -13,22 +13,22 @@ script/script = ExtResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 154, 319 )
+transform/pos = Vector2( 55.0923, 334.454 )
 
 [node name="enemy1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 122.201, -910.959 )
+transform/pos = Vector2( 190.2, -988.231 )
 
 [node name="champ_enemy1" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 698.157, -986.13 )
+transform/pos = Vector2( 772.338, -967.585 )
 
 [node name="enemy2" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1394.07, -948.897 )
+transform/pos = Vector2( 414.266, -982.897 )
 
 [node name="boss1" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 1057.9, -985.987 )
+transform/pos = Vector2( 1042.45, -964.352 )
 
 
