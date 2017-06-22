@@ -63,25 +63,28 @@ func _process(delta):
 	########################
 	############### SHOOTING
 	########################
-	if last_fired <= 0:
-		if Input.is_action_pressed("shoot_up"):
-			dir_y = -1
-			dir_x = 0
+	if Input.is_action_pressed("shoot_up"):
+		dir_y = -1
+		dir_x = 0
+		if last_fired <= 0:
 			var shot = pre_shot.instance()
 			Shoot(shot)
-		if Input.is_action_pressed("shoot_down"):
-			dir_y = 1
-			dir_x = 0
+	if Input.is_action_pressed("shoot_down"):
+		dir_y = 1
+		dir_x = 0
+		if last_fired <= 0:
 			var shot = pre_shot.instance()
 			Shoot(shot)
-		if Input.is_action_pressed("shoot_right"):
-			dir_y = 0
-			dir_x = 1
+	if Input.is_action_pressed("shoot_right"):
+		dir_y = 0
+		dir_x = 1
+		if last_fired <= 0:
 			var shot = pre_shot.instance()
 			Shoot(shot)
-		if Input.is_action_pressed("shoot_left"):
-			dir_y = 0
-			dir_x = -1
+	if Input.is_action_pressed("shoot_left"):
+		dir_y = 0
+		dir_x = -1
+		if last_fired <= 0:
 			var shot = pre_shot.instance()
 			Shoot(shot)
 	
@@ -119,6 +122,9 @@ func TakeDamage(value):
 		hp -= value
 		invulnerable += after_hit
 		hit_anim.play("hit")
+	if hp <= 0:
+		print("ded lul")
+		remove_from_group(global.PLAYER_GROUP)
 	pass
 
 func _on_player_area_enter( area ):

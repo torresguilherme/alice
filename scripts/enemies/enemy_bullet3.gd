@@ -18,7 +18,8 @@ func _process(delta):
 	if(get_pos().x >= bullet_range || get_pos().x <= -bullet_range || get_pos().y >= bullet_range || get_pos().y <= -bullet_range):
 		queue_free()
 
-func _on_enemy_bullet1_area_enter( area ):
+
+func _on_enemy_bullet3_area_enter( area ):
 	if area.is_in_group(global.PLAYER_GROUP):
 		area.TakeDamage(damage)
 		queue_free()
