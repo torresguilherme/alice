@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://scripts/levels/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/enemies/champ_enemy1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/enemies/enemy2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/enemies/boss1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/levels/wall.tscn" type="PackedScene" id=7]
 
 [node name="main" type="Node2D"]
 
@@ -13,7 +14,7 @@ script/script = ExtResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 55.0923, 334.454 )
+transform/pos = Vector2( 48.0676, 296.089 )
 
 [node name="enemy1" parent="." instance=ExtResource( 3 )]
 
@@ -21,7 +22,7 @@ transform/pos = Vector2( 190.2, -988.231 )
 
 [node name="champ_enemy1" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 954.699, 321.306 )
+transform/pos = Vector2( 756.884, -986.13 )
 
 [node name="enemy2" parent="." instance=ExtResource( 5 )]
 
@@ -29,6 +30,22 @@ transform/pos = Vector2( 414.266, -982.897 )
 
 [node name="boss1" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 1042.45, -964.352 )
+transform/pos = Vector2( 960.319, 308.285 )
+
+[node name="wall" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 48.4352, 145.306 )
+
+[node name="wall1" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 51.7756, 447.608 )
+
+[node name="wall2" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( -115.242, 295.622 )
+
+[node name="wall3" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 215.453, 297.292 )
 
 

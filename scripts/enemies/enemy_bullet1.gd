@@ -19,8 +19,8 @@ func _process(delta):
 		queue_free()
 
 func _on_enemy_bullet1_area_enter( area ):
-	if area.is_in_group(global.PLAYER_GROUP):
-		area.TakeDamage(damage)
+	if area.is_in_group(global.PLAYER_HITBOX_GROUP):
+		area.get_node("../").TakeDamage(damage)
 		queue_free()
 	elif area.is_in_group(global.WALL_GROUP):
 		queue_free()

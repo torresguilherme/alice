@@ -5,6 +5,7 @@ const ENEMY_GROUP = ("enemy")
 const WALL_GROUP = ("wall")
 const ENEMY_BULLET_GROUP = ("enemy_bullet")
 const PLAYER_BULLET_GROUP = ("player_bullet")
+const PLAYER_HITBOX_GROUP = ("player_hitbox")
 
 func _ready():
 	pass

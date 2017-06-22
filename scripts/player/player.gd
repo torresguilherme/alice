@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 #stats
 var max_hp = 4
@@ -57,8 +57,10 @@ func _process(delta):
 		dir_x = 0
 		down = 1
 	
-	set_pos(get_pos() + Vector2(1, 0) * speed * delta * (right + left))
-	set_pos(get_pos() + Vector2(0, 1) * speed * delta * (up + down))
+	#set_pos(get_pos() + Vector2(1, 0) * speed * delta * (right + left))
+	#set_pos(get_pos() + Vector2(0, 1) * speed * delta * (up + down))
+	move(Vector2(1, 0) * speed * delta * (right + left))
+	move(Vector2(0, 1) * speed * delta * (up + down))
 	
 	########################
 	############### SHOOTING
@@ -124,14 +126,5 @@ func TakeDamage(value):
 		hit_anim.play("hit")
 	if hp <= 0:
 		print("ded lul")
-		remove_from_group(global.PLAYER_GROUP)
-	pass
-
-func _on_player_area_enter( area ):
-	if area.is_in_group(global.ENEMY_GROUP):
-		if area.has_method("TakeDamage"):
-			area.TakeDamage(5)
-		else:
-			area.queue_free()
-		TakeDamage(1)
+		get_node("hitbox").remove_from_group(global.PLAYER_HITBOX_GROUP)
 	pass
