@@ -47,10 +47,10 @@ tracks/1/keys = { "times":FloatArray( 0.2 ), "transitions":FloatArray( 1 ), "val
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -4.07251, -0.814499 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -4.07251, -0.814499 )
 shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -65,6 +65,8 @@ modulate = Color( 0.988281, 0.9767, 0.9767, 1 )
 
 [node name="hitbox" type="CollisionPolygon2D" parent="."]
 
+visibility/visible = false
+transform/pos = Vector2( -4.07251, -0.814499 )
 build_mode = 0
 polygon = Vector2Array( -16.2744, -38.565, -38.2661, -18.2024, -24.4195, 26.5953, 9.7897, 18.4503, 8.16071, 3.7892, 22.0073, -7.61386, 13.8622, -35.307 )
 shape_range = Vector2( 0, 1 )

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scripts/levels/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/enemies/enemy1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/enemies/champ_enemy1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/enemies/enemy2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/enemies/boss1.tscn" type="PackedScene" id=6]
 
 [node name="main" type="Node2D"]
 
@@ -20,10 +21,14 @@ transform/pos = Vector2( 122.201, -910.959 )
 
 [node name="champ_enemy1" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 719.793, -936.676 )
+transform/pos = Vector2( 698.157, -986.13 )
 
 [node name="enemy2" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1394.07, -948.897 )
+
+[node name="boss1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1057.9, -985.987 )
 
 

@@ -58,7 +58,6 @@ func Shoot3(direction):
 		shots[i].direction = direction
 		shots[i].set_global_pos(get_global_pos())
 		get_owner().add_child(shots[i])
-	
 	pass
 
 func TakeDamage(value):

@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 300
+var speed = 70
 var damage = 1
 var bullet_range = 1500
 var direction = Vector2(0, 0)

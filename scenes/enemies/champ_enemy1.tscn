@@ -62,6 +62,7 @@ modulate = Color( 0.368607, 0.334961, 0.765625, 1 )
 
 [node name="hitbox" type="CollisionPolygon2D" parent="."]
 
+visibility/visible = false
 build_mode = 0
 polygon = Vector2Array( -40.2737, -17.4449, -32.2737, 13.8884, -20.9404, 29.2218, 13.0596, 18.5551, 7.05959, 5.88845, 20.3929, -10.7782, 13.7263, -36.1116, -12.9404, -40.7782 )
 shape_range = Vector2( 0, 1 )
