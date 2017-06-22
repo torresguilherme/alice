@@ -7,9 +7,9 @@ var direction = Vector2(0, 0)
 var hp = 10
 
 # rotation variables
-var rot = 90
+var rot = -900
 var rot_dir = 1
-var rot_max = 90
+var rot_max = 900
 
 #shooting
 var shot_speed = 150

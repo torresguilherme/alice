@@ -6,7 +6,7 @@ var hp = 150
 var cooldown = 1
 var last_shot = 0
 var aggro_distance = 800
-var shot_speed = 100
+var shot_speed = 250
 
 #shot type
 var pre_shot = preload("res://scenes/enemies/champ_bullet.tscn")
