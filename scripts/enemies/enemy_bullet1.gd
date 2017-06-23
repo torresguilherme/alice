@@ -25,3 +25,27 @@ func _on_enemy_bullet1_area_enter( area ):
 	elif area.is_in_group(global.WALL_GROUP):
 		queue_free()
 	pass
+
+func _on_enemy_bullet2_area_enter( area ):
+	if area.is_in_group(global.PLAYER_HITBOX_GROUP):
+		area.get_node("../").TakeDamage(damage)
+		queue_free()
+	elif area.is_in_group(global.WALL_GROUP):
+		queue_free()
+	pass
+
+func _on_enemy_bullet3_area_enter( area ):
+	if area.is_in_group(global.PLAYER_HITBOX_GROUP):
+		area.get_node("../").TakeDamage(damage)
+		queue_free()
+	elif area.is_in_group(global.WALL_GROUP):
+		queue_free()
+	pass
+
+func _on_enemy_bullet4_area_enter( area ):
+	if area.is_in_group(global.PLAYER_HITBOX_GROUP):
+		area.get_node("../").TakeDamage(damage)
+		queue_free()
+	elif area.is_in_group(global.WALL_GROUP):
+		queue_free()
+	pass
