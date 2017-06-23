@@ -4,9 +4,11 @@ var speed = 300
 var damage = 1
 var bullet_range = 1500
 var direction = Vector2(0, 0)
+var initial_pos = Vector2(0, 0)
 
 func _ready():
 	add_to_group(global.ENEMY_BULLET_GROUP)
+	initial_pos = get_pos()
 	set_process(true)
 	pass
 
@@ -15,7 +17,8 @@ func _process(delta):
 	set_pos(get_pos() + direction * speed * delta)
 	
 	############ FREE MEMORY
-	if(get_pos().x >= bullet_range || get_pos().x <= -bullet_range || get_pos().y >= bullet_range || get_pos().y <= -bullet_range):
+	if(get_pos().x >= (initial_pos.x + bullet_range) || get_pos().x <= (initial_pos.x - bullet_range)
+	|| get_pos().y >= (initial_pos.y + bullet_range) || get_pos().y <= (initial_pos.y - bullet_range)):
 		queue_free()
 
 func _on_enemy_bullet1_area_enter( area ):

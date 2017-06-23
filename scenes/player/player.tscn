@@ -116,6 +116,7 @@ texture = ExtResource( 2 )
 
 [node name="collider" type="CollisionShape2D" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 0, 90 )
 shape = SubResource( 1 )
 trigger = false
@@ -123,6 +124,7 @@ _update_shape_index = 0
 
 [node name="hitbox" type="Area2D" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 0, 40 )
 input/pickable = true
 shapes/0/shape = SubResource( 2 )

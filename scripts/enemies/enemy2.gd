@@ -7,7 +7,7 @@ var cooldown = .5
 var cooldown2 = 1
 var last_shot = 0
 var shot_count = 1
-var aggro_distance = 800
+var aggro_distance = 400
 var shot_speed = [350, 300, 250]
 
 #shot type
@@ -19,6 +19,7 @@ var attacking = false
 
 #attack parameters
 var player_position
+var player_hitbox_position
 var shooting_direction
 
 # animation
@@ -36,8 +37,16 @@ func _ready():
 func _process(delta):
 	############ STATE CHANGE
 	player_position = get_owner().player_position
-	if get_global_pos().distance_to(player_position) <= aggro_distance:
-		attacking = true
+	player_hitbox_position = get_owner().player_hitbox_position
+	if get_global_pos().distance_to(player_hitbox_position) <= aggro_distance:
+		var vision = get_world_2d().get_direct_space_state().intersect_ray(get_global_pos(), player_hitbox_position, [self])
+		if !vision.values().empty():
+			if vision.values()[1].is_in_group(global.PLAYER_GROUP):
+				attacking = true
+			else:
+				attacking = false
+		else:
+			attacking = false
 	else:
 		attacking = false
 	

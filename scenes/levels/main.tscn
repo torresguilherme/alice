@@ -18,19 +18,19 @@ transform/pos = Vector2( 48.0676, 296.089 )
 
 [node name="enemy1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 190.2, -988.231 )
+transform/pos = Vector2( 952.949, 332.349 )
 
 [node name="champ_enemy1" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 855.548, -955.772 )
+transform/pos = Vector2( 935.238, -1046.85 )
 
 [node name="enemy2" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 414.266, -982.897 )
+transform/pos = Vector2( 357.344, -1017.05 )
 
 [node name="boss1" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 599.816, -978.142 )
+transform/pos = Vector2( 637.764, -993.321 )
 
 [node name="wall" parent="." instance=ExtResource( 7 )]
 

@@ -9,7 +9,7 @@ var cooldown3 = 1
 var cooldown4 = 2
 var last_shot = 0
 var shot_count = 1
-var aggro_distance = 800
+var aggro_distance = 500
 var shot_speed = [450, 400, 350]
 var quad_shot_speed = [450, 400, 350, 300]
 

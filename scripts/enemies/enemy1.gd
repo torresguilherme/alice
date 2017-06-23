@@ -5,7 +5,7 @@ var speed = 80
 var hp = 40
 var cooldown = .5
 var last_shot = 0
-var aggro_distance = 800
+var aggro_distance = 400
 var shot_speed = [400, 350, 300]
 
 #shot type
@@ -16,6 +16,7 @@ var attacking = false
 
 #attack parameters
 var player_position
+var player_hitbox_position
 var shooting_direction
 
 # animation
@@ -33,8 +34,17 @@ func _ready():
 func _process(delta):
 	############ STATE CHANGE
 	player_position = get_owner().player_position
-	if get_global_pos().distance_to(player_position) <= aggro_distance:
-		attacking = true
+	player_hitbox_position = get_owner().player_hitbox_position
+	if get_global_pos().distance_to(player_hitbox_position) <= aggro_distance:
+		var vision = get_world_2d().get_direct_space_state().intersect_ray(get_global_pos(), player_hitbox_position, [self])
+		if !vision.values().empty():
+			if vision.values()[1].is_in_group(global.PLAYER_GROUP):
+
+				attacking = true
+			else:
+				attacking = false
+		else:
+			attacking = false
 	else:
 		attacking = false
 	
@@ -61,7 +71,7 @@ func Shoot3(direction):
 		shots[i].direction = direction
 		shots[i].set_global_pos(get_global_pos())
 		get_owner().add_child(shots[i])
-		audio.play("emeny_shoot4")
+		audio.play("enemy_shoot4")
 	pass
 
 func TakeDamage(value):

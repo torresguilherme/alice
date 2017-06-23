@@ -48,7 +48,7 @@ samples/enemy_shoot4 = {
 
 [node name="enemy_audio_player" type="SamplePlayer2D"]
 
-params/volume_db = 0.0
+params/volume_db = -7.0
 params/pitch_scale = 1.0
 params/attenuation/min_distance = 1.0
 params/attenuation/max_distance = 2048.0

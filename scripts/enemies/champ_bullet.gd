@@ -5,6 +5,7 @@ var damage = 1
 var bullet_range = 1500
 var direction = Vector2(0, 0)
 var hp = 10
+var initial_pos = Vector2(0, 0)
 
 # rotation variables
 var rot = -900
@@ -26,6 +27,7 @@ onready var audio = get_node("audio")
 func _ready():
 	add_to_group(global.ENEMY_BULLET_GROUP)
 	add_to_group(global.ENEMY_GROUP)
+	initial_pos = get_pos()
 	local_positions.append(get_node("firepoint1").get_pos())
 	local_positions.append(get_node("firepoint2").get_pos())
 	local_positions.append(get_node("firepoint3").get_pos())
@@ -57,7 +59,8 @@ func _process(delta):
 		last_shot -= delta
 	
 	############ FREE MEMORY
-	if(get_pos().x >= bullet_range || get_pos().x <= -bullet_range || get_pos().y >= bullet_range || get_pos().y <= -bullet_range):
+	if(get_pos().x >= (initial_pos.x + bullet_range) || get_pos().x <= (initial_pos.x - bullet_range)
+	|| get_pos().y >= (initial_pos.y + bullet_range) || get_pos().y <= (initial_pos.y - bullet_range)):
 		queue_free()
 
 func GetPositions(positions, local_positions):
