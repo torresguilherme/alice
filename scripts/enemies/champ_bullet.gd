@@ -20,6 +20,9 @@ var pre_shot = preload("res://scenes/enemies/enemy_bullet1.tscn")
 # marked shooting positions
 var local_positions = []
 
+# audio
+onready var audio = get_node("audio")
+
 func _ready():
 	add_to_group(global.ENEMY_BULLET_GROUP)
 	add_to_group(global.ENEMY_GROUP)
@@ -76,12 +79,14 @@ func Shoot(positions, local_positions):
 		shots[i].direction = Vector2(local_positions[i].x/30, local_positions[i].y/30)
 		shots[i].set_global_pos(positions[i])
 		get_node("../").add_child(shots[i])
+		audio.play("enemy_shoot3")
 	pass
 
 func TakeDamage(value):
 	hp -= value
 	if hp <= 0:
 		queue_free()
+	audio.play("enemy_damage1")
 
 func _on_champ_bullet_area_enter( area ):
 	if area.is_in_group(global.PLAYER_HITBOX_GROUP):

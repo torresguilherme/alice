@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://scripts/enemies/enemy1.gd" type="Script" id=1]
 [ext_resource path="res://sprites/enemies/enemy1-3.png" type="Texture" id=2]
 [ext_resource path="res://sprites/enemies/enemy1-2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/audio/enemy_audio_player.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -24,7 +25,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:texture")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.2, 0.4 ), "transitions":FloatArray( 1, 1, 1 ), "update":1, "values":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2, 0.4 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -36,12 +42,24 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Color( 0.984375, 0.0499878, 0.0499878, 1 ), Color( 0.988281, 0.9767, 0.9767, 1 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984375, 0.0499878, 0.0499878, 1 ), Color( 0.988281, 0.9767, 0.9767, 1 ) ]
+}
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0.2 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"return_anim_to_default" } ] }
+tracks/1/keys = {
+"times": FloatArray( 0.2 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "return_anim_to_default"
+} ]
+}
 
 [node name="enemy1" type="Area2D"]
 
@@ -83,5 +101,7 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "default"
+
+[node name="audio" parent="." instance=ExtResource( 4 )]
 
 

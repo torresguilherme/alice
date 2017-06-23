@@ -21,6 +21,9 @@ var shooting_direction
 # animation
 onready var anim = get_node("anim")
 
+# audio
+onready var audio = get_node("audio")
+
 func _ready():
 	anim.play("default")
 	add_to_group(global.ENEMY_GROUP)
@@ -58,6 +61,7 @@ func Shoot3(direction):
 		shots[i].direction = direction
 		shots[i].set_global_pos(get_global_pos())
 		get_owner().add_child(shots[i])
+		audio.play("emeny_shoot4")
 	pass
 
 func TakeDamage(value):
@@ -65,6 +69,10 @@ func TakeDamage(value):
 	hp -= value
 	if hp <= 0:
 		queue_free()
+	audio.play("enemy_damage1")
 
 func return_anim_to_default():
 	anim.play("default")
+
+func DeathSound():
+	audio.play("enemy_death1")

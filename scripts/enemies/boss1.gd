@@ -33,6 +33,9 @@ var firepoints = []
 onready var anim = get_node("anim")
 onready var hit_anim = get_node("hit_anim")
 
+# audio
+onready var audio = get_node("audio")
+
 func _ready():
 	add_to_group(global.ENEMY_GROUP)
 	firepoints.append(get_node("firepoint_l").get_global_pos())
@@ -94,6 +97,7 @@ func Shoot1(shooting_direction):
 		shots[i].direction = shooting_direction
 		shots[i].set_global_pos(get_global_pos())
 		get_owner().add_child(shots[i])
+	audio.play("enemy_shoot4")
 	pass
 
 # same as before with enemy_bullet4
@@ -105,6 +109,7 @@ func Shoot2(shooting_direction):
 		shots[i].direction = shooting_direction
 		shots[i].set_global_pos(get_global_pos())
 		get_owner().add_child(shots[i])
+	audio.play("enemy_shoot2")
 	pass
 
 # shoots the champion bullet
@@ -114,6 +119,7 @@ func Shoot3(shooting_direction):
 	shot.direction = shooting_direction
 	shot.set_global_pos(get_global_pos())
 	get_owner().add_child(shot)
+	audio.play("enemy_shoot4")
 	pass
 
 #hands shoot at player direction
@@ -128,6 +134,7 @@ func Shoot4(shooting_directions, firepoints):
 			shots[counter].set_global_pos(firepoints[i])
 			get_owner().add_child(shots[counter])
 			counter += 1
+		audio.play("enemy_shoot1")
 	pass
 
 func TakeDamage(value):
@@ -135,3 +142,7 @@ func TakeDamage(value):
 	hp -= value
 	if hp <= 0:
 		queue_free()
+	audio.play("enemy_damage1")
+
+func DeathSound():
+	audio.play("enemy_death1")

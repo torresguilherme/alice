@@ -25,6 +25,9 @@ var shooting_direction
 onready var anim = get_node("anim")
 onready var hit_anim = get_node("hit_anim")
 
+# audio
+onready var audio = get_node("audio")
+
 func _ready():
 	add_to_group(global.ENEMY_GROUP)
 	set_process(true)
@@ -64,6 +67,7 @@ func Shoot1(shooting_direction):
 	shot.speed = shot_speed[2]
 	shot.direction = shooting_direction
 	get_owner().add_child(shot)
+	audio.play("enemy_shoot4")
 	pass
 
 func Shoot2(shooting_direction):
@@ -76,6 +80,7 @@ func Shoot2(shooting_direction):
 		shots[i].direction = shooting_direction
 		shots[i].speed = shot_speed[i]
 		get_owner().add_child(shots[i])
+	audio.play("enemy_shoot2")
 	pass
 
 func TakeDamage(value):
@@ -83,3 +88,7 @@ func TakeDamage(value):
 	hp -= value
 	if hp <= 0:
 		queue_free()
+	audio.play("enemy_damage1")
+
+func DeathSound():
+	audio.play("enemy_death1")

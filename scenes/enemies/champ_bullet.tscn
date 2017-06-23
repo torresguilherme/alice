@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://scripts/enemies/champ_bullet.gd" type="Script" id=1]
 [ext_resource path="res://sprites/bullets/bullet4-1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/audio/enemy_audio_player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -65,6 +66,8 @@ transform/pos = Vector2( -30, 0 )
 [node name="firepoint8" type="Position2D" parent="."]
 
 transform/pos = Vector2( -20, -20 )
+
+[node name="audio" parent="." instance=ExtResource( 3 )]
 
 [connection signal="area_enter" from="." to="." method="_on_champ_bullet_area_enter"]
 

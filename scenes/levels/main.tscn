@@ -22,7 +22,7 @@ transform/pos = Vector2( 190.2, -988.231 )
 
 [node name="champ_enemy1" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 756.884, -986.13 )
+transform/pos = Vector2( 855.548, -955.772 )
 
 [node name="enemy2" parent="." instance=ExtResource( 5 )]
 
@@ -30,7 +30,7 @@ transform/pos = Vector2( 414.266, -982.897 )
 
 [node name="boss1" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 960.319, 308.285 )
+transform/pos = Vector2( 599.816, -978.142 )
 
 [node name="wall" parent="." instance=ExtResource( 7 )]
 

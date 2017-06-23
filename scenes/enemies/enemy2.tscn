@@ -1,17 +1,17 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://scripts/enemies/enemy2.gd" type="Script" id=1]
 [ext_resource path="res://sprites/enemies/enemy2-1.png" type="Texture" id=2]
 [ext_resource path="res://sprites/enemies/enemy2-2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/audio/enemy_audio_player.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 92.668
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource/name = "default"
 length = 0.8
 loop = true
 step = 0.1
@@ -19,11 +19,15 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:texture")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ ExtResource( 2 ), ExtResource( 3 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 3 ) ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "hit"
 length = 0.2
 loop = false
 step = 0.1
@@ -31,13 +35,18 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Color( 0.984375, 0.0153809, 0.0153809, 1 ), Color( 1, 1, 1, 1 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.984375, 0.0153809, 0.0153809, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="enemy2" type="Area2D"]
 
 transform/scale = Vector2( 0.7, 0.7 )
 input/pickable = true
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -53,7 +62,7 @@ texture = ExtResource( 2 )
 [node name="hitbox" type="CollisionShape2D" parent="."]
 
 visibility/visible = false
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -62,7 +71,7 @@ _update_shape_index = 0
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/default = SubResource( 1 )
+anims/default = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -73,10 +82,12 @@ autoplay = "default"
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/hit = SubResource( 2 )
+anims/hit = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="audio" parent="." instance=ExtResource( 4 )]
 
 

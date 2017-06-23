@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://sfx/enemy_damage1.wav" type="Sample" id=1]
+[ext_resource path="res://sfx/enemy_death1.wav" type="Sample" id=2]
+[ext_resource path="res://sfx/enemy_shoot1.wav" type="Sample" id=3]
+[ext_resource path="res://sfx/enemy_shoot2.wav" type="Sample" id=4]
+[ext_resource path="res://sfx/enemy_shoot3.wav" type="Sample" id=5]
+[ext_resource path="res://sfx/enemy_shoot4.wav" type="Sample" id=6]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/enemy_damage1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/enemy_death1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/enemy_shoot1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/enemy_shoot2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/enemy_shoot3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/enemy_shoot4 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+
+[node name="enemy_audio_player" type="SamplePlayer2D"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+
