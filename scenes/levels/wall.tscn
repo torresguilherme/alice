@@ -28,6 +28,7 @@ bounce = 0.0
 
 [node name="sprite" type="Sprite" parent="."]
 
+z/z = -1
 texture = ExtResource( 1 )
 
 [node name="collider" type="CollisionShape2D" parent="."]
