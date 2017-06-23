@@ -37,7 +37,6 @@ drag_margin/bottom = 0.2
 
 [node name="walls" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -83.0794, -75.7489 )
 
 [node name="wall" parent="walls" instance=ExtResource( 3 )]
@@ -328,7 +327,7 @@ transform/pos = Vector2( 995.24, -301.887 )
 
 [node name="wall23" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 829.486, -301.887 )
+transform/pos = Vector2( 830.084, -301.623 )
 
 [node name="wall24" parent="walls" instance=ExtResource( 3 )]
 
