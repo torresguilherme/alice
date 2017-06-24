@@ -10,6 +10,7 @@ var initial_pos = Vector2(0, 0)
 func _ready():
 	add_to_group(global.PLAYER_BULLET_GROUP)
 	initial_pos = get_pos()
+	set_pause_mode(1)
 	set_process(true)
 	pass
 

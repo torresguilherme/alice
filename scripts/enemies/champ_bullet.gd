@@ -14,7 +14,7 @@ var rot_max = 900
 
 #shooting
 var shot_speed = 150
-var cooldown = .1
+var cooldown = .3
 var last_shot = 0
 var pre_shot = preload("res://scenes/enemies/enemy_bullet1.tscn")
 
@@ -28,6 +28,7 @@ func _ready():
 	add_to_group(global.ENEMY_BULLET_GROUP)
 	add_to_group(global.ENEMY_GROUP)
 	initial_pos = get_pos()
+	set_pause_mode(1)
 	local_positions.append(get_node("firepoint1").get_pos())
 	local_positions.append(get_node("firepoint2").get_pos())
 	local_positions.append(get_node("firepoint3").get_pos())

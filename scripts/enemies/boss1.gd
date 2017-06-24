@@ -2,12 +2,12 @@ extends Area2D
 
 #stats
 var speed = 80
-var hp = 1000
+var hp = 700
 var cooldown = .2
 var cooldown2 = .05
 var cooldown3 = 1
 var cooldown4 = 2
-var last_shot = 0
+var last_shot = 3
 var shot_count = 1
 var aggro_distance = 500
 var shot_speed = [450, 400, 350]

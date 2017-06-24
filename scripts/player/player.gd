@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 #stats
 var max_hp = 4
-var hp = 0
+var hp = 4
 var speed = 400
 var cooldown = .05
 var after_hit = 1.5
@@ -29,8 +29,8 @@ var pre_shot = preload("res://scenes/player/player_bullet.tscn")
 
 func _ready():
 	add_to_group(global.PLAYER_GROUP)
+	hp = global.player_hp
 	dir_y = 1
-	hp = 4
 	set_process(true)
 	pass
 
@@ -128,7 +128,7 @@ func TakeDamage(value):
 		hp -= value
 		invulnerable += after_hit
 		hit_anim.play("hit")
-		last_fired = 1
+		last_fired = .5
 		audio.play("player_damage1")
 	if hp <= 0:
 		print("ded lul")
