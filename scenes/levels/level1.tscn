@@ -151,11 +151,11 @@ transform/pos = Vector2( 1660.19, 1510.6 )
 
 [node name="wall87" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1826.12, 1813.17 )
+transform/pos = Vector2( 1991.8, 1811.88 )
 
 [node name="wall108" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1992.12, 1813.17 )
+transform/pos = Vector2( 663.796, 1811.88 )
 
 [node name="wall109" parent="walls" instance=ExtResource( 3 )]
 
@@ -231,31 +231,31 @@ transform/pos = Vector2( 1161.6, 150.525 )
 
 [node name="wall88" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1660.19, 1813.09 )
+transform/pos = Vector2( 1825.8, 1811.88 )
 
 [node name="wall89" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1493.99, 1811.98 )
+transform/pos = Vector2( 1659.8, 1811.88 )
 
 [node name="wall90" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1327.78, 1811.98 )
+transform/pos = Vector2( 1493.8, 1811.88 )
 
 [node name="wall91" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1161.58, 1811.98 )
+transform/pos = Vector2( 1327.8, 1811.88 )
 
 [node name="wall92" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 996.481, 1811.98 )
+transform/pos = Vector2( 1161.8, 1811.88 )
 
 [node name="wall93" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 830.276, 1811.98 )
+transform/pos = Vector2( 995.796, 1811.88 )
 
 [node name="wall94" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 664.072, 1811.98 )
+transform/pos = Vector2( 829.796, 1811.88 )
 
 [node name="wall95" parent="walls" instance=ExtResource( 3 )]
 
@@ -407,15 +407,15 @@ transform/pos = Vector2( 332.039, 906.64 )
 
 [node name="wall49" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 664.159, 905.738 )
+transform/pos = Vector2( 664, 905.738 )
 
 [node name="wall50" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 664.158, 1057.36 )
+transform/pos = Vector2( 664, 1057.36 )
 
 [node name="wall51" parent="walls" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 664.158, 1207.36 )
+transform/pos = Vector2( 664, 1207.36 )
 
 [node name="wall52" parent="walls" instance=ExtResource( 3 )]
 
