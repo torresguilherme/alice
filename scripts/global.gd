@@ -17,14 +17,12 @@ func _ready():
 	scenes.append(load("res://scenes/levels/level1.tscn"))
 	scenes.append(load("res://scenes/levels/boss_room.tscn"))
 	scenes.append(load("res://scenes/levels/credits.tscn"))
+	scenes.append(load("res://scenes/levels/game_over_screen.tscn"))
 	pass
 
 func ChangeScene(index):
-	if current_scene != 0 && current_scene != 3:
+	if current_scene == 1 || current_scene == 2:
 		player_hp = get_tree().get_current_scene().get_node("player").hp
 	get_tree().change_scene_to(scenes[index])
 	current_scene = index
-	if current_scene != 0 && current_scene != 3:
-		get_tree().get_current_scene().get_node("player").hp = player_hp
-	elif current_scene == 0:
-		player_hp = PLAYER_MAX_HP
+	get_tree().set_pause(false)

@@ -1,24 +1,24 @@
 [gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://sfx/ui-select1.wav" type="Sample" id=1]
-[ext_resource path="res://sfx/ui-select2.wav" type="Sample" id=2]
-[ext_resource path="res://sfx/ui_cancel.wav" type="Sample" id=3]
+[ext_resource path="res://sfx/ui_cancel.wav" type="Sample" id=1]
+[ext_resource path="res://sfx/ui-select1.wav" type="Sample" id=2]
+[ext_resource path="res://sfx/ui-select2.wav" type="Sample" id=3]
 
 [sub_resource type="SampleLibrary" id=1]
 
-samples/ui-select1 = {
+samples/ui_cancel = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 1 )
 }
-samples/ui-select2 = {
+samples/ui_select1 = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 2 )
 }
-samples/ui_cancel = {
+samples/ui_select2 = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
