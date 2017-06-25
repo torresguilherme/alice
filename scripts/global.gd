@@ -8,7 +8,7 @@ const PLAYER_BULLET_GROUP = ("player_bullet")
 const PLAYER_HITBOX_GROUP = ("player_hitbox")
 const PLAYER_MAX_HP = 5
 
-var current_scene = 1
+var current_scene = 0
 var scenes = []
 var player_hp = PLAYER_MAX_HP
 
