@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 #stats
 var max_hp = 4
-var hp = 4
+var hp = global.PLAYER_MAX_HP
 var speed = 400
 var cooldown = .05
 var after_hit = 1.5

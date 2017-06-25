@@ -2,7 +2,7 @@ extends Area2D
 
 #stats
 var speed = 80
-var hp = 700
+var hp = 2
 var cooldown = .2
 var cooldown2 = .05
 var cooldown3 = 1
@@ -141,8 +141,13 @@ func TakeDamage(value):
 	hit_anim.play("hit")
 	hp -= value
 	if hp <= 0:
-		queue_free()
+		remove_from_group(global.ENEMY_GROUP)
+		set_process(false)
+		hit_anim.play("death")
 	audio.play("enemy_damage1")
 
 func DeathSound():
 	audio.play("enemy_death1")
+
+func VictoryScene():
+	get_node("../").get_node("transition").play("end")

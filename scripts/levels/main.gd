@@ -20,11 +20,11 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		if last_pause <= 0:
 			if !get_tree().is_paused():
-				print("pause")
 				get_tree().set_pause(true)
+				PauseMusic()
 			else:
-				print("unpause")
 				get_tree().set_pause(false)
+				UnpauseMusic()
 			last_pause = pause_cooldown
 	if last_pause > 0:
 		last_pause -= delta
