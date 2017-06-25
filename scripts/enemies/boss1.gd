@@ -2,7 +2,7 @@ extends Area2D
 
 #stats
 var speed = 80
-var hp = 2
+var hp = 700
 var cooldown = .2
 var cooldown2 = .05
 var cooldown3 = 1

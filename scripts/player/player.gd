@@ -24,6 +24,8 @@ onready var hit_anim = get_node("hit_anim")
 #audio
 onready var audio = get_node("player_audio")
 
+# hud
+onready var hud = get_node("../hud")
 # shot types
 var pre_shot = preload("res://scenes/player/player_bullet.tscn")
 
@@ -124,13 +126,12 @@ func Shoot(shot):
 
 func TakeDamage(value):
 	if invulnerable <= 0:
-		print("ouch!")
 		hp -= value
 		invulnerable += after_hit
 		hit_anim.play("hit")
 		last_fired = .5
 		audio.play("player_damage1")
+		hud.RemoveHeart()
 	if hp <= 0:
-		print("ded lul")
 		get_node("hitbox").remove_from_group(global.PLAYER_HITBOX_GROUP)
 	pass

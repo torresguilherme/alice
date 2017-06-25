@@ -4,6 +4,8 @@ onready var player = get_node("player")
 onready var player_hitbox = player.get_node("hitbox")
 onready var music = get_node("music")
 onready var transition = get_node("transition")
+onready var hud = get_node("hud")
+
 var pause_screen = preload("res://scenes/levels/pause_screen.tscn")
 var game_over_screen = preload("res://scenes/levels/game_over_screen.tscn")
 var player_position
@@ -18,6 +20,8 @@ func _ready():
 		player.hp = global.PLAYER_MAX_HP
 	else:
 		player.hp = global.player_hp
+	for i in range(player.hp):
+		hud.AddHeart()
 	set_process(true)
 	pass
 
