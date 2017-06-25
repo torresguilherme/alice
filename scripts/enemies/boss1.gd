@@ -138,7 +138,6 @@ func Shoot4(shooting_directions, firepoints):
 	pass
 
 func TakeDamage(value):
-	hit_anim.play("hit")
 	hp -= value
 	if hp <= 0:
 		remove_from_group(global.ENEMY_GROUP)
@@ -151,3 +150,9 @@ func DeathSound():
 
 func VictoryScene():
 	get_node("../").get_node("transition").play("end")
+
+func _on_boss1_area_enter( area ):
+	if area.is_in_group(global.PLAYER_HITBOX_GROUP):
+		area.get_node("../").TakeDamage(1)
+		TakeDamage(10)
+	pass

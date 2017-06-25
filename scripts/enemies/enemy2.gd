@@ -101,3 +101,9 @@ func TakeDamage(value):
 
 func DeathSound():
 	audio.play("enemy_death1")
+
+func _on_enemy2_area_enter( area ):
+	if area.is_in_group(global.PLAYER_HITBOX_GROUP):
+		area.get_node("../").TakeDamage(1)
+		TakeDamage(10)
+	pass

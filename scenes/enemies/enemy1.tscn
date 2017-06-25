@@ -104,4 +104,6 @@ autoplay = "default"
 
 [node name="audio" parent="." instance=ExtResource( 4 )]
 
+[connection signal="area_enter" from="." to="." method="_on_enemy1_area_enter"]
+
 

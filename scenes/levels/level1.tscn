@@ -71,6 +71,7 @@ script/script = ExtResource( 1 )
 [node name="player" parent="." instance=ExtResource( 2 )]
 
 process/pause_mode = 1
+editor/display_folded = true
 transform/pos = Vector2( 84.2542, 61.0345 )
 
 [node name="camera" type="Camera2D" parent="player"]

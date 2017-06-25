@@ -118,4 +118,6 @@ transform/pos = Vector2( 146.92, 131.956 )
 
 [node name="audio" parent="." instance=ExtResource( 3 )]
 
+[connection signal="area_enter" from="." to="." method="_on_boss1_area_enter"]
+
 
